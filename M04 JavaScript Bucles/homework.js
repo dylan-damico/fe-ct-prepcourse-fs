@@ -131,19 +131,15 @@ function esPrimo(num) {
    // [Nota]: los números negativos, 0 y 1 NO son números primos.
    // Tu código:
    var divisores = 0;
-   var valorAbsoluto = Math.abs(num);
 
-   do{
-      valorAbsoluto--;
-      
-      if(num % valorAbsoluto == 0){
+   for(var i = Math.abs(num); i > 0; i--){
+      if(num % i == 0){
          divisores++;
       }
    }
-   while(valorAbsoluto > 0)
 
-   if(divisores > 2) return false;
-   else return true;
+   if(divisores == 2) return true;
+   else return false;
 }
 
 function esVerdadero(valor) {
